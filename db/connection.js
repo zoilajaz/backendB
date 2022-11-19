@@ -7,8 +7,7 @@ const config ={
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     connectionLimit:process.env.DB_CONN_LIMIT,
-
-
+    allowPublicKeyRetrieval: true
 }
 const pool = mariadb.createPool(config)
 module.exports = pool 
