@@ -19,29 +19,12 @@ res.status(404).json({msg: 'MI nombre es ' +nombre+' '+apellido_paterno})
 
 }
 
-
-
 //URI Params
 const himessage = (req = request, res = response) => {
     //console.log(req.params)
     const {name, edad} = req.params
     res.status(400).json({msg: 'Hola ' +name+ ' ' +edad})
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const byeMessage = (req= request, res = response) => {
     res.status(401).json({msg: 'Adios mundo'})

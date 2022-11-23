@@ -1,8 +1,8 @@
+const cors = require('cors')
 const express = require('express')
 const messagesRouter = require('./routes/messages')
-const usuariosRouter = require('./routes/usuarios')
-const animeRouter = require ('./routes/anime')
-const cors = require('cors')
+const UsuariosRouter = require('./routes/Usuarios')
+const animeRouter = require('./routes/anime')
 
 class Server {
     constructor(){
@@ -11,24 +11,23 @@ class Server {
 
         this.paths = {
             messages: "/api/v1/messages",
-            usuarios: "/api/v1/usuarios",
+            Usuarios: "/api/v1/Usuarios",
             anime: "/api/v1/anime"
         }
-        this.middleware()
+        this.middlewares()
         this.routes()
     }
     routes(){ ','
         //this.app.get('/', (req, res) => {
-            //res.send('Mensaje recibido')
+        //res.send('Mensaje recibido')
        // }) //End point
 
        this.app.use(this.paths.messages, messagesRouter)
-       this.app.use(this.paths.usuarios, usuariosRouter)
-       this.app.use(this.paths.anime,animeRouter)
-    }
-    
-    middleware(){
-        this.app.use(cors())
+       this.app.use(this.paths.Usuarios, UsuariosRouter)
+       this.app.use(this.paths.anime, animeRouter)
+ }
+    middlewares(){
+        this.app.use(cors())// habilita origen curzado
         this.app.use(express.json())
     }
     listen(){

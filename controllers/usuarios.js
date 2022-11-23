@@ -84,8 +84,7 @@ const deleteUserByID = async (req = request, res = response) =>{
         }
     
 
-}
-
+    }
 
 const addUser = async (req = request, res = response) => {
     const {Nombre, Apellidos, Edad, Genero = '', Usuario, Contrasena, Fecha_Nacimiento = '2001-08-12', Activo} = req.body//URI params
